@@ -1,2 +1,59 @@
 body {
+  width: 100vw;
+  height: 100vh;
+  background: #4DD0E1;
 }
+.main{
+  width: 60%;
+  margin: 0 auto;
+}
+.flexbox {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.wordContainer {
+  height: 100px;
+  width: 40%;
+  background: #F44336;
+  box-shadow: 10px 10px 0 10px #B71C1C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wordInput {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  background: rgba(255,255,255,0.2);
+  border: none;
+}
+.orange {
+  background: #F44336;
+  box-shadow: 10px 10px 0 10px #B71C1C;
+}
+.pink {
+  background: #E91E63;
+  box-shadow: 10px 10px 0 10px #880E4F;
+}
+.yellow {
+  background: #FFEB3B;
+  box-shadow: 10px 10px 0 10px #F57f17;
+}
+.purple {
+  background: #673AB7;
+  box-shadow: 10px 10px 0 10px #311B92;
+}
+.blue {
+  background: #2196F3;
+  box-shadow: 10px 10px 0 10px #0D47A1;
+}
+.green {
+  background: #BBC34A;
+  box-shadow: 10px 10px 0 10px #33691E;
+}
+
+
+
+
