@@ -4,31 +4,111 @@ body {
   background: #4DD0E1;
 }
 .main{
-  width: 60%;
+  width: 600px;
   margin: 0 auto;
 }
 .flexbox {
-  height: 100vh;
+  height: 500px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .wordContainer {
   height: 100px;
-  width: 40%;
-  background: #F44336;
-  box-shadow: 10px 10px 0 10px #B71C1C;
+  width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+.wordContainer:after {
+  content: '';
+  height: 100px;
+  width: 10px;
+  transform: skewY(45deg);
+  position: absolute;
+  top: 5px;
+  right: -10px;
+}
+.wordContainer:before{
+  content: '';
+  height: 10px;
+  width: 250px;
+  transform: skewX(45deg);
+  position: absolute;
+  left: 5px;
+  bottom: -10px;
+}
+#wordOne {
+  background: #F44336;
+  color: #B71C1C;
+}
+#wordTwo {
+  background: #673AB7;
+  color:  #311B92;
+}
+#wordOne:after, #wordOne:before {
+  background: #B71C1C;
+}
+#wordTwo:after, #wordTwo:before {
+  background: #311B92;
 }
 .wordInput {
+  color: inherit;
   display: inline-block;
+  width: 60%;
+  text-align: center;
   margin: 0 auto;
   font-size: 1.2rem;
   background: rgba(255,255,255,0.2);
   border: none;
 }
+.portmanteau {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 100px;
+  position: relative;
+  background: linear-gradient(to right, #F44336, #673AB7);
+}
+.portmanteau:after{
+  content: '';
+  height: 10px;
+  width: 600px;
+  transform: skewX(45deg);
+  position: absolute;
+  left: 5px;
+  bottom: -10px;
+  background: linear-gradient(to right, #B71C1C, #311B92);
+}
+.portmanteau:before{
+  content: '';
+  height: 100px;
+  width: 10px;
+  transform: skewY(45deg);
+  position: absolute;
+  top: 5px;
+  right: -10px;
+  background: #311B92;
+}
+.portmanteau > span {
+  font-size: 1.2rem;
+  text-align: center;
+  width: 60%;
+  height: 25px;
+  padding-top: 1px;
+  color: rgba(0,0,0,0.5);
+  font-family: sans-serif;
+  display: inline-block;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+}
+
+
+
+
+
 .orange {
   background: #F44336;
   box-shadow: 10px 10px 0 10px #B71C1C;
