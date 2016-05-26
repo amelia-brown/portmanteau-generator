@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-//import Portmanteau from '../containers/Portmanteau';
+import { combine_words } from '../modules/word'
+
+@connect( (state) => {}, (dispatch) => {
+  return bindActionCreators({ combine_words }, dispatch)
+})
 
 export default class Word extends Component {
   state = {
@@ -13,9 +17,9 @@ export default class Word extends Component {
     e.preventDefault();
     var f = this.refs.wordOne.value;
     var s = this.refs.wordTwo.value;
-    var portmanteau = f + s;
-    return this.setState({portmanteau: portmanteau});
+    return this.setState({combine});
     }
+// https://jsfiddle.net/pxg9fkaj/5/
 
   render () {
     return (
