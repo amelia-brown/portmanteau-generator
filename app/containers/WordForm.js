@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { comineWords } from '../actions/index';
 
-let CombineWords = ({ dispatch }) => {
+let WordForm = ({ dispatch }) => {
   let input1;
   let input2;
 
@@ -25,15 +25,15 @@ let CombineWords = ({ dispatch }) => {
           ref={node => {
           input1 = node;
         }} />
-      <div>
+      </div>
       <div className = "wordContainer" id="wordTwo">
         <input
           className="wordInput"
           ref={node => {
           input2 = node;
-        }}>
-        <div>
-        </div>
+        }} />
+      </div>
+      </div>
         <button
           className="submit"
           type="submit">
@@ -44,4 +44,4 @@ let CombineWords = ({ dispatch }) => {
   )
 };
 
-export default CombineWords
+export default WordForm

@@ -11,6 +11,8 @@ export const TOGGLE_SAVED_WORDS = 'TOGGLE_SAVED_WORDS'
 export function combineWords(w1, w2) {
   return {
     type: COMBINE_WORDS,
+    w1,
+    w2,
     w3
   }
 }
