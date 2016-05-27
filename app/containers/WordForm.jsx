@@ -44,4 +44,6 @@ let WordForm = ({ dispatch }) => {
   )
 };
 
-export default WordForm
+WordForm = connect()(WordForm);
+
+export default WordForm;
