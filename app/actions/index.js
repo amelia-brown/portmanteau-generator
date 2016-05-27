@@ -2,7 +2,7 @@
 
 export const COMBINE_WORDS = 'COMBINE_WORDS'
 export const SAVE_WORDS = 'SAVE_WORDS'
-export const DISPLAY_SAVED_WORDS = 'DISPLAY_SAVED_WORDS'
+export const TOGGLE_SAVED_WORDS = 'TOGGLE_SAVED_WORDS'
 
 // Action creators
 
@@ -26,9 +26,9 @@ export function saveWords(word) {
 
 // Update the boolean value (whether word list showing)
 
-export function displaySavedWords(showing) {
+export function toggleSavedWords(showing) {
   return {
-    type: DISPLAY_SAVED_WORDS,
+    type: TOGGLE_SAVED_WORDS,
     showing
   }
 }
