@@ -1,11 +1,11 @@
 import React from 'react';
-import WordList from './WordList';
+import Words from '../containers/Words';
 import WordForm from '../containers/WordForm';
 
 const App = () => (
   <div>
     <WordForm />
-    <WordList />
+    <Words />
   </div>
 )
 

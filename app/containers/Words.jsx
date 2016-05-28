@@ -6,3 +6,9 @@ const mapStateToProps = (state) => {
     words: state.words
   }
 };
+
+const Words = connect(
+  mapStateToProps
+)(WordList);
+
+export default Words

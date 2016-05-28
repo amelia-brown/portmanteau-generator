@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import toggle from './toggle';
 import word from './word';
-import words from './words';
+import Words from './Words';
 
 const portmanteauApp = combineReducers({
   toggle,
   word,
-  words
+  Words
 });
 
 export default portmanteauApp;
