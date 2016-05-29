@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { comineWords } from '../actions/index';
+import { combineWords } from '../actions/index';
 
-let WordForm = ({ dispatch }) => {
+let WordForm = (props) => {
   let input1;
   let input2;
 
@@ -10,10 +10,10 @@ let WordForm = ({ dispatch }) => {
     <div className = "main">
       <form onSubmit={e => {
         e.preventDefault()
-        if (!input.value.trim()) {
-          return;
+        if (!input1.value.trim() || !input2.value.trim()) {
+          return
         };
-
+        debugger;
         dispatch(combineWords(input1.value, input2.value));
         input1value = '';
         input2.value = '';
@@ -44,5 +44,4 @@ let WordForm = ({ dispatch }) => {
   )
 };
 
-
-export default WordForm;
+export default connect(({word}) => ({word}))(WordForm);
