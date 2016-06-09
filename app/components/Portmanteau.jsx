@@ -4,10 +4,14 @@ import React, { PropTypes } from 'react';
 // hook it up to propTypes/state
 // etc
 
-const Portmanteau = (portmanteau) => (
+const Portmanteau = (word) => (
   <div className="portmanteau">
     <span>
-      {portmanteau}
+      {props.word.w1} + {props.word.w2} = {props.word.portmanteau}
     </span>
   </div>
 )
+
+Portmanteau.propTypes = {
+  word: PropTypes.object.isRequired,
+}

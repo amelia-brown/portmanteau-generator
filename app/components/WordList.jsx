@@ -14,7 +14,6 @@ const WordList = ( {words} ) => (
 
 WordList.propTypes = {
   words: PropTypes.array.isRequired,
-  showing: PropTypes.bool.isRequired
 };
 
-export default WordList
+export default WordList;
