@@ -5,7 +5,6 @@ const Form = ({ handleSubmit }) => {
   let input1;
   let input2;
   return (
-    <div className='main'>
       <form onSubmit={e => {
         e.preventDefault()
         if (!input1.value.trim() || !input2.value.trim()) {
@@ -16,6 +15,7 @@ const Form = ({ handleSubmit }) => {
         input1.value = '';
         input2.value = '';
       }}>
+
       <div className='flexbox'>
         <div className='wordContainer' id='wordOne'>
           <input
@@ -24,6 +24,9 @@ const Form = ({ handleSubmit }) => {
               input1 = node;
             }} />
         </div>
+        <button type='submit'>
+          <i className='material-icons md-36'>add</i>
+        </button>
         <div className='wordContainer' id='wordTwo'>
           <input
             className='wordInput'
@@ -31,9 +34,8 @@ const Form = ({ handleSubmit }) => {
               input2 = node;
             }} />
         </div>
-      </div>
-      </form>
     </div>
+    </form>
   )
 };
 

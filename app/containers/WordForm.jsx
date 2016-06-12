@@ -4,10 +4,19 @@ import { combineWords } from '../actions/index';
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 
+// @connect => syntax for decorator
+
 @connect(
+
+// Connect is a function that takes two functions as arguments
+// First argument passes state and expects an object in return
+  // ({}) passing no keys => ({}) to an empty object
+  // equivalent to state => return{};
+  // or ({words}) => ({words})
+// The second argument is a function that connects the dispatch to the action creators
   ({}) => ({}),
     dispatch => {
-      return bindActionCreators({combineWords, dispatch});
+      return bindActionCreators({combineWords}, dispatch);
     },
 )
 
@@ -22,25 +31,3 @@ export default class WordForm extends Component {
     )
   }
 };
-
-
-
-
-// The Form component needs only the handleSubmit function as a prop
-// handleSubmit dispatches combineWords to the store
-// The Store is then updated with the values submitted, w1, w2 and portmanteau
-
-//const mapDispatchToProps = (dispatch) => {
-//  return {
-//    handleSubmit: (w1, w2) => {
-//      dispatch(combineWords(w1, w2));
-//    }
-//  };
-//};
-
-//const WordForm = connect(
-//  state,
-//  mapDispatchToProps
-//)(Form);
-
-export default WordForm;
