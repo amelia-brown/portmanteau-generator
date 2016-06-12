@@ -13,7 +13,7 @@ const common = {
     app: PATHS.app
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   output: {
     path: PATHS.build,

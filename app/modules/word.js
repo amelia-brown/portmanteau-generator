@@ -8,6 +8,7 @@ const word = (state = {}, action) => {
     case 'COMBINE_WORDS':
       return {
         ...action.payload,
+        portmanteau: portmantize(w1, w2)
       };
     default:
       return state;
