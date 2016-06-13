@@ -7,10 +7,17 @@ const Portmanteau = ({word}) => {
   }
 
   return (
-    <div className='portmanteau'>
-      <span>
-        {word.w1} + {word.w2} = {word.portmanteau}
-      </span>
+    <div>
+      <div className='portmanteau'>
+        <span>
+          {word.w1} + {word.w2} = {word.portmanteau}
+        </span>
+        <button className='save'
+                onClick={() => handleSave(word)}
+        >
+          <i className='material-icons star'>grade</i>
+        </button>
+      </div>
     </div>
   )
 };
