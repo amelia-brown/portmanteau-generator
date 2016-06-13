@@ -26,7 +26,9 @@ export function combineWords(w1, w2) {
 export function saveWords(word) {
   return {
     type: SAVE_WORDS,
-    word
+    payload: {
+      word
+    },
   };
 };
 

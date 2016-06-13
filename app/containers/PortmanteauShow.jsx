@@ -11,12 +11,13 @@ import { bindActionCreators } from 'redux';
   },
 )
 
-export default class Save extends Component {
+export default class PortmanteauShow extends Component {
   handleSave(word) {
     return this.props.saveWords(word);
   }
   render() {
-    return <Portmanteau handleSave={this.handleSave.bind(this)} />
+    return <Portmanteau word={this.props.word}
+                        handleSave={this.handleSave.bind(this)} />
   }
 }
 

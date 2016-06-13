@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
 
-const Portmanteau = ({word}) => {
+const Portmanteau = ({word, handleSave}) => {
   if (!word.portmanteau) {
-    console.log("null")
     return null;
   }
 
@@ -24,6 +23,7 @@ const Portmanteau = ({word}) => {
 
 Portmanteau.propTypes = {
   word: PropTypes.object.isRequired,
+  handleSave: PropTypes.func.isRequired,
 };
 
 export default Portmanteau;

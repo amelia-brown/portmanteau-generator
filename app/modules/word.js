@@ -9,6 +9,8 @@ const word = (state = {}, action) => {
       return {
         ...action.payload,
       };
+    case 'SAVE_WORDS':
+      return {};
     default:
       return state;
   }

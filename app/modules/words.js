@@ -2,7 +2,7 @@ const words = (state = [], action) => {
   switch (action.type) {
     case 'SAVE_WORDS':
       return state.concat(
-        word
+        ...action.payload,
       )
     default:
       return state
