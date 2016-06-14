@@ -20,9 +20,7 @@ export function combineWords(w1, w2) {
     },
   };
 };
-
 // Take word object to save, add word to saved words array
-
 export function saveWords(word) {
   return {
     type: SAVE_WORDS,
@@ -34,9 +32,8 @@ export function saveWords(word) {
 
 // Update the boolean value (whether word list showing)
 
-export function toggleSavedWords(showing) {
+export function toggleSavedWords() {
   return {
     type: TOGGLE_SAVED_WORDS,
-    showing
   };
 };

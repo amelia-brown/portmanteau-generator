@@ -1,23 +1,40 @@
 import React, { PropTypes } from 'react';
 import Word from './Word';
 
-const WordList = ({words}) => {
+const Words = ({words, handleToggle, showing}) => (
   <div className='modalContainer'>
-    <div className='wordList'>
-      <i className='material-icons'>close</i>
+    <i className='material-icons'
+       onClick={handleToggle}>
+       list
+    </i>
+    <div
+      className='wordList'
+      style={{
+        display: showing ? 'block' : 'none'
+      }}
+    >
+      <i className='material-icons'
+         onClick={handleToggle}>
+         close
+      </i>
       <ul>
-        {words.map(word =>
-          <Word />
-        )}
+        {words.map(word => (
+               <li
+                key={word.id}>
+                  {word.portmanteau} </li>
+        )
+                  )}
       </ul>
     </div>
   </div>
-}
+)
 
-WordList.propTypes = {
-  words = PropTypes.arrayOf(PropTypes.shape({
-    word: PropTypes
+Words.propTypes = {
+  handleToggle: PropTypes.func.isRequired,
+  showing: PropTypes.bool.isRequired,
+  words: PropTypes.arrayOf(PropTypes.shape({
+    word: PropTypes.object.isRequired,
   }).isRequired).isRequired,
-}
+};
 
-export default WordList
+export default Words;

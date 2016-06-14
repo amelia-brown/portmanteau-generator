@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import { createStore } from 'redux';
 import WordForm from './WordForm';
+import WordList from './WordList';
 import PortmanteauShow from './PortmanteauShow';
 import { Provider } from 'react-redux';
 import portmanteauApp from '../modules';
@@ -14,6 +15,7 @@ export default class Root extends Component {
         <div className='main'>
           <WordForm />
           <PortmanteauShow />
+          <WordList />
         </div>
       </Provider>
     )
