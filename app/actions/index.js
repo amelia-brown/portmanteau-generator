@@ -54,17 +54,29 @@ const get = (url) => {
   });
 }
 
-//{"Content-Type":"application/json; charset=utf-8"}
 
 export const READ = 'READ';
+export const SET_WORD = 'SET_WORD';
 
 export function read(value) {
   var promise = get('http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&api_key=02e41994dd05a5f14f9040d3bae087cfca3c7626ffd00951d')
   return {
     type: READ,
+    meta: value,
     payload: {
       promise,
     },
   }
 };
+
+export function setWord(sibling, word) {
+  return {
+    type: SET_WORD,
+    meta: sibling,
+    payload: {
+      word,
+    }
+  };
+};
+
 

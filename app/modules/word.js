@@ -8,10 +8,12 @@
 
 const word = (state = {}, action) => {
   switch (action.type) {
-    case 'READ':
-      debugger;
+    case 'READ_PENDING':
+      return state;
+    case 'READ_FULFILLED':
+//      debugger;
       return Object.assign({}, state, {
-        [action.payload.value]: action.payload.word
+        [action.meta]: action.payload.word
       });
     case 'COMBINE_WORDS':
       return {
@@ -19,6 +21,10 @@ const word = (state = {}, action) => {
       };
     case 'SAVE_WORDS':
       return {};
+    case 'SET_WORD':
+      return {
+        [action.meta]: action.payload.word,
+      };
     default:
       return state;
   }

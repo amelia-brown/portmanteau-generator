@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Form from '../components/Form';
-import { combineWords, read } from '../actions/index';
+import { combineWords, read, setWord } from '../actions/index';
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 
@@ -14,9 +14,9 @@ import {bindActionCreators} from 'redux';
   // equivalent to state => return{};
   // or ({words}) => ({words})
 // The second argument is a function that connects the dispatch to the action creators
-  ({}) => ({}),
+  ({word}) => ({word}),
     dispatch => {
-      return bindActionCreators({combineWords, read}, dispatch);
+      return bindActionCreators({combineWords, read, setWord}, dispatch);
     },
 )
 
@@ -27,10 +27,16 @@ export default class WordForm extends Component {
   getWord(word) {
     return this.props.read(word);
   };
+  onChange(sibling, word) {
+    return this.props.setWord(sibling, word);
+  };
+
 
   render() {
     return (
       <Form
+        word={this.props.word}
+        onChange={this.onChange.bind(this)}
         handleSubmit={this.handleSubmit.bind(this)}
         getWord={this.getWord.bind(this)}
       />
