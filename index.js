@@ -4,7 +4,7 @@ var path = require('path');
 require('ex6-promise').polyfill();
 require('isomorphic-fetch');
 
-fetch('http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5')
+fetch('http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&api_key=02e41994dd05a5f14f9040d3bae087cfca3c7626ffd00951d')
   .then(function(response) {
     if (response.status >= 400) {
       throw new Error("Bad response from server");

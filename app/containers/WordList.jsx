@@ -8,7 +8,7 @@ import Words from '../components/Words';
 // It also needs the current value of the app's visibility
 // It needs to dispatch the action to toggle visibility
 
-@connect( (state) => {
+@connect((state) => {
   return {
     showing: state.toggle.showing,
     words: state.words,
@@ -19,15 +19,15 @@ import Words from '../components/Words';
 
 export default class WordList extends Component {
   handleToggle() {
-    debugger;
     return this.props.toggleSavedWords();
   }
 
   render() {
     return (
-      <Words words={this.props.words}
-             showing={this.props.showing}
-             handleToggle={this.handleToggle.bind(this)}
+      <Words
+        words={this.props.words}
+        showing={this.props.showing}
+        handleToggle={this.handleToggle.bind(this)}
       />
     )
   }

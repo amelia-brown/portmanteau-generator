@@ -1,4 +1,4 @@
-const toggle = (state = false, action) => {
+const toggle = (state = {showing: false}, action) => {
   switch (action.type) {
     case 'TOGGLE_SAVED_WORDS':
       return Object.assign({}, state, {
