@@ -58,7 +58,7 @@ body {
   display: inline-block;
   width: 60%;
   text-align: center;
-  margin: 0 auto;
+  margin: 0;
   font-size: 1.2rem;
   background: rgba(255,255,255,0.2);
   border: none;
@@ -101,7 +101,7 @@ body {
   color: rgba(0,0,0,0.5);
   font-family: sans-serif;
   display: inline-block;
-  margin: 0 auto;
+  margin: 0;
   background: rgba(255,255,255,0.2);
 }
 button {
@@ -110,6 +110,8 @@ button {
   height: 48px;
   border-radius: 50%;
   background: none;
+  font-size: 0.75rem;
+  color: inherit;
 }
 button > i {
   font-size: 34px;
@@ -129,7 +131,8 @@ button.save {
 }
 button.randomWord {
   border: none;
-  padding: 5px;
+  width: 60px;
+  padding: 5px 10px;
   margin: 0;
 }
 button > .star {
@@ -171,4 +174,29 @@ button > .star {
 
 
 
+/* Modal styles */
 
+.wordList {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
+}
+i.toggleModal {
+  position: fixed;
+  right: 5rem;
+  top: 5rem;
+}
+.wordList > ul {
+  margin-top: 5rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.wordList li {
+  padding-bottom: 3rem;
+}

@@ -3,7 +3,10 @@ import Word from './Word';
 
 const Words = ({words, handleToggle, showing}) => (
   <div className='modalContainer'>
-    <i className='material-icons'
+    <i className='material-icons toggleModal'
+       style={{
+        display: showing ? 'none' : 'block'
+       }}
        onClick={handleToggle}>
        list
     </i>
@@ -13,7 +16,7 @@ const Words = ({words, handleToggle, showing}) => (
         display: showing ? 'block' : 'none'
       }}
     >
-      <i className='material-icons'
+      <i className='material-icons toggleModal'
          onClick={handleToggle}>
          close
       </i>

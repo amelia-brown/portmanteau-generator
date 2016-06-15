@@ -9,7 +9,7 @@ const Portmanteau = ({word, handleSave}) => {
     <div>
       <div className='portmanteau'>
         <span>
-          {word.w1} + {word.w2} = {word.portmanteau}
+          {word.portmanteau}
         </span>
         <button className='save'
                 onClick={() => handleSave(word)}
