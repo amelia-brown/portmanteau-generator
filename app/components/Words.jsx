@@ -21,7 +21,11 @@ const Words = ({words, handleToggle, showing}) => (
         {words.map(word => (
                <li
                 key={word.id}>
-                {word.w1} + {word.w2} = {word.portmanteau} 
+                <div className='portmanteau'>
+                <span>
+                  {word.w1} + {word.w2} = {word.portmanteau} 
+                </span>
+                </div>
                </li>
         )
                   )}

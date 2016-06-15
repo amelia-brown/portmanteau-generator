@@ -7,13 +7,8 @@ const Form = ({ word, handleSubmit, getWord, onChange }) => {
   return (
       <form onSubmit={e => {
         e.preventDefault()
-//      if (!input1.value.trim() || !input2.value.trim()) {
-// Put API call here to get word from Wordnik if the user does not provide a word
-        if (!input1.value.trim()) {
-          return getWord('w1');
-        };
-        if (!input2.value.trim()) {
-          return getWord('w2');
+      if (!input1.value.trim() || !input2.value.trim()) {
+          return;
         };
         handleSubmit(input1.value, input2.value);
         input1.value = '';
@@ -31,6 +26,14 @@ const Form = ({ word, handleSubmit, getWord, onChange }) => {
             ref={node => {
               input1 = node;
             }} />
+            <button
+              className='randomWord'
+              onClick={() => {
+                getWord('w1')
+              }}
+            >
+              Random
+            </button>
         </div>
         <button type='submit'>
           <i className='material-icons md-36'>add</i>
@@ -45,7 +48,15 @@ const Form = ({ word, handleSubmit, getWord, onChange }) => {
             ref={node => {
               input2 = node;
             }} />
-        </div>
+         <button
+           className='randomWord'
+           onClick={() => {
+             getWord('w2')
+           }}
+         >
+           Random
+         </button>
+      </div>
     </div>
     </form>
   )
