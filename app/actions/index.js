@@ -79,4 +79,14 @@ export function setWord(sibling, word) {
   };
 };
 
+export const SET_COLORS = 'SET_COLORS';
 
+export function setColors(color1, color2) {
+  return {
+    type: SET_COLORS,
+    payload: {
+      color1,
+      color2,
+    },
+  };
+};

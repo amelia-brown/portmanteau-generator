@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 
 @connect(
-  ({word}) => ({word}),
+  ({word, colors}) => ({word, colors}),
   dispatch => {
     return bindActionCreators({saveWords}, dispatch);
   },
@@ -16,8 +16,11 @@ export default class PortmanteauShow extends Component {
     return this.props.saveWords(word);
   }
   render() {
-    return <Portmanteau word={this.props.word}
-                        handleSave={this.handleSave.bind(this)} />
+    return <Portmanteau
+              word={this.props.word}
+              colors={this.props.colors}
+              handleSave={this.handleSave.bind(this)}
+           />
   }
 }
 

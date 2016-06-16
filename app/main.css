@@ -39,20 +39,6 @@ body {
   left: 5px;
   bottom: -10px;
 }
-#wordOne {
-  background: #F44336;
-  color: #B71C1C;
-}
-#wordTwo {
-  background: #673AB7;
-  color:  #311B92;
-}
-#wordOne:after, #wordOne:before {
-  background: #B71C1C;
-}
-#wordTwo:after, #wordTwo:before {
-  background: #311B92;
-}
 .wordInput {
   color: inherit;
   display: inline-block;
@@ -145,31 +131,50 @@ button > .star {
 }
 
 
+/* COLORS */
 
-
-.orange {
+.red {
   background: #F44336;
-  box-shadow: 10px 10px 0 10px #B71C1C;
+  color: #B71C1C;
 }
-.pink {
-  background: #E91E63;
-  box-shadow: 10px 10px 0 10px #880E4F;
-}
-.yellow {
-  background: #FFEB3B;
-  box-shadow: 10px 10px 0 10px #F57f17;
+.red:after, .red:before {
+  background: #B71C1C;
 }
 .purple {
   background: #673AB7;
-  box-shadow: 10px 10px 0 10px #311B92;
+  color:  #311B92;
+}
+.purple:after, .purple:before {
+  background: #311B92;
+}
+.pink {
+  background: #E91E63;
+  color:  #880E4F;
+}
+.pink:after, .pink:before {
+  background: #880E4F;
+}
+.yellow {
+  background: #FFEB3B;
+  color: #F57f17;
+}
+.yellow:after, .yellow:before {
+  background: #F57F17;
 }
 .blue {
   background: #2196F3;
-  box-shadow: 10px 10px 0 10px #0D47A1;
+  color: #0D47A1;
+}
+.blue:after, .blue:before{
+  background: #0D47A1;
+
 }
 .green {
   background: #BBC34A;
-  box-shadow: 10px 10px 0 10px #33691E;
+  color: #33691E;
+}
+.green:after, .green:before {
+  background: #33691E;
 }
 
 

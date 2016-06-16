@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
-
-const Form = ({ word, handleSubmit, getWord, onChange }) => {
+const Form = ({ word, handleSubmit, getWord, colors }) => {
   let input1;
   let input2;
   return (
@@ -16,11 +15,9 @@ const Form = ({ word, handleSubmit, getWord, onChange }) => {
       }}>
 
       <div className='flexbox'>
-        <div className='wordContainer' id='wordOne'>
+        <div className={`${colors.color1} wordContainer`}
+             id='wordOne'>
           <input
-            onChange={e => {
-              onChange('w1', e.target.value)
-            }}
             value={word.w1}
             className='wordInput'
             ref={node => {
@@ -38,11 +35,9 @@ const Form = ({ word, handleSubmit, getWord, onChange }) => {
         <button type='submit'>
           <i className='material-icons md-36'>add</i>
         </button>
-        <div className='wordContainer' id='wordTwo'>
+        <div className={`${colors.color2} wordContainer`}
+             id='wordTwo'>
           <input
-            onChange={e => {
-              onChange('w2', e.target.value)
-            }}
             value={word.w2}
             className='wordInput'
             ref={node => {
@@ -63,7 +58,6 @@ const Form = ({ word, handleSubmit, getWord, onChange }) => {
 };
 
 Form.propTypes = {
-  onChange: PropTypes.func.isRequired,
   word: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   getWord: PropTypes.func.isRequired

@@ -6,12 +6,23 @@ import PortmanteauShow from './PortmanteauShow';
 import { Provider } from 'react-redux';
 import portmanteauApp from '../modules';
 import promiseMiddleware from 'redux-promise-middleware';
+import { colorsArray, selectColors } from '../utils/colors';
 
 const composeStoreWithMiddleware = applyMiddleware(
   promiseMiddleware()
 )(createStore);
 
-let store = composeStoreWithMiddleware(portmanteauApp);
+var [color1, color2] = selectColors(colorsArray);
+
+let initialState = {
+  words: JSON.parse(localStorage.getItem('words')) || [],
+  colors: {
+    color1,
+    color2
+  }
+}
+
+let store = composeStoreWithMiddleware(portmanteauApp, initialState);
 
 export default class Root extends Component {
   render() {
