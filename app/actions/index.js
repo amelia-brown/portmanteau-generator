@@ -1,8 +1,9 @@
 // Action types
 
-export const COMBINE_WORDS = 'COMBINE_WORDS'
-export const SAVE_WORDS = 'SAVE_WORDS'
-export const TOGGLE_SAVED_WORDS = 'TOGGLE_SAVED_WORDS'
+export const COMBINE_WORDS = 'COMBINE_WORDS';
+export const SAVE_WORDS = 'SAVE_WORDS';
+export const TOGGLE_SAVED_WORDS = 'TOGGLE_SAVED_WORDS';
+export const DELETE_WORD = 'DELETE_WORD';
 
 // Action creators
 
@@ -10,7 +11,7 @@ export const TOGGLE_SAVED_WORDS = 'TOGGLE_SAVED_WORDS'
 
 import portmantize from '../utils/portmantize.js';
 
-export function combineWords(w1, w2) {
+export function combineWords(w1, w2, color1, color2) {
   return {
     type: COMBINE_WORDS,
     payload: {
@@ -22,13 +23,16 @@ export function combineWords(w1, w2) {
 };
 // Take word object to save, add word to saved words array
 
-let nextIndex = 0;
-export function saveWords(word) {
-  word.id = nextIndex++;
+import uuid from 'node-uuid'
+
+export function saveWords(word, color1, color2) {
+  word.id = uuid.v4();
   return {
     type: SAVE_WORDS,
     payload: {
-      word
+      word,
+      color1,
+      color2
     },
   };
 };
@@ -38,6 +42,13 @@ export function saveWords(word) {
 export function toggleSavedWords() {
   return {
     type: TOGGLE_SAVED_WORDS,
+  };
+};
+
+export function deleteWord(id) {
+  return {
+    type: DELETE_WORD,
+    id
   };
 };
 
@@ -53,7 +64,6 @@ const get = (url) => {
     });
   });
 }
-
 
 export const READ = 'READ';
 export const SET_WORD = 'SET_WORD';

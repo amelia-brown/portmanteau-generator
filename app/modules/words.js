@@ -6,6 +6,18 @@ const words = (state = [], action) => {
       );
       localStorage.setItem('words', JSON.stringify(words));
       return words;
+    case 'DELETE_WORD':
+      var words = state;
+      var index = words.findIndex(function(item){
+        if (item.id !== action.id) {
+          return false;
+        }
+        return true
+      })
+      return [
+          ...words.slice(0, index),
+          ...words.slice(index + 1),
+      ];
     default:
       return state;
   }

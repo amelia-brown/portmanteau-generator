@@ -5,6 +5,7 @@ const Portmanteau = ({word, handleSave, colors}) => {
     return null;
   }
 
+// Hex codes for the colors in colorArray (dark and light tones)
 var colorsObj = {
   pink: {
     light: '#E91E63',
@@ -31,36 +32,33 @@ var colorsObj = {
     dark: '#B71C1C',
   }
 }
-var colorOne = colors.color1;
-var colorTwo = colors.color2;
-var gradientLeft = colorsObj[colorOne].light;
-var gradientRight = colorsObj[colorTwo].light;
-var gradientLeftDark = colorsObj[colorOne].dark;
-var gradientRightDark = colorsObj[colorTwo].dark;
+
+var gradientLeft = colorsObj[colors.color1];
+var gradientRight = colorsObj[colors.color2];
 
   return (
     <div>
       <div className='portmanteau'
            style={{
-            background: `linear-gradient(to right, ${gradientLeft}, ${gradientRight})`
+            background: `linear-gradient(to right, ${gradientLeft.light}, ${gradientRight.light})`
            }}
       >
         <div
           className='portmanteau-after'
           style={{
-            background: `linear-gradient(to right, ${gradientLeftDark}, ${gradientRightDark})`
+            background: `linear-gradient(to right, ${gradientLeft.dark}, ${gradientRight.dark})`
           }}
         ></div>
         <div
           className='portmanteau-before'
           style={{
-            background: gradientRightDark
+            background: gradientRight.dark
           }}></div>
         <span>
           {word.portmanteau}
         </span>
         <button className='save'
-                onClick={() => handleSave(word)}
+                onClick={() => handleSave(word, colors.color1, colors.color2)}
         >
           <i className='material-icons star'>grade</i>
         </button>

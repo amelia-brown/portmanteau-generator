@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Word from './Word';
 
-const Words = ({words, handleToggle, showing}) => (
+const Words = ({words, handleToggle, showing, handleDelete}) => (
   <div className='modalContainer'>
     <i className='material-icons toggleModal'
        style={{
@@ -21,23 +21,20 @@ const Words = ({words, handleToggle, showing}) => (
          close
       </i>
       <ul>
-        {words.map(word => (
-               <li
-                key={word.id}>
-                <div className='portmanteau'>
-                <span>
-                  {word.w1} + {word.w2} = {word.portmanteau} 
-                </span>
-                </div>
-               </li>
-        )
-                  )}
+        {words.map(word =>
+                  <Word
+                    key={word.id}
+                    word={word}
+                    handleDelete={handleDelete}
+                  />
+                )}
       </ul>
     </div>
   </div>
 )
 
 Words.propTypes = {
+  handleDelete: PropTypes.func.isRequired,
   handleToggle: PropTypes.func.isRequired,
   showing: PropTypes.bool.isRequired,
   words: PropTypes.arrayOf(PropTypes.shape({

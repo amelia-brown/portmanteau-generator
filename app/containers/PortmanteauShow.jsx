@@ -12,8 +12,8 @@ import { bindActionCreators } from 'redux';
 )
 
 export default class PortmanteauShow extends Component {
-  handleSave(word) {
-    return this.props.saveWords(word);
+  handleSave(word, color1, color2) {
+    return this.props.saveWords(word, color1, color2);
   }
   render() {
     return <Portmanteau

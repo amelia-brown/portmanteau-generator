@@ -8,7 +8,7 @@ const portmanteauApp = combineReducers({
   toggle,
   word,
   words,
-  colors
+  colors,
 });
 
 export default portmanteauApp;

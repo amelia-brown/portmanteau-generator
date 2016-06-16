@@ -1,4 +1,4 @@
-import { toggleSavedWords } from '../actions/index';
+import { toggleSavedWords, deleteWord } from '../actions/index';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -14,12 +14,15 @@ import Words from '../components/Words';
     words: state.words,
   }
 }, (dispatch) => {
-  return bindActionCreators({toggleSavedWords}, dispatch);
+  return bindActionCreators({toggleSavedWords, deleteWord}, dispatch);
 })
 
 export default class WordList extends Component {
   handleToggle() {
     return this.props.toggleSavedWords();
+  }
+  handleDelete(id) {
+    return this.props.deleteWord(id);
   }
 
   render() {
@@ -28,6 +31,7 @@ export default class WordList extends Component {
         words={this.props.words}
         showing={this.props.showing}
         handleToggle={this.handleToggle.bind(this)}
+        handleDelete={this.handleDelete.bind(this)}
       />
     )
   }

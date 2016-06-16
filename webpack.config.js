@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const uuid = require('node-uuid');
 const merge = require('webpack-merge');
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
 const TARGET = process.env.npm_lifecycle_event;
