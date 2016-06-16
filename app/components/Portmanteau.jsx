@@ -5,7 +5,7 @@ const Portmanteau = ({word, handleSave, colors}) => {
     return null;
   }
 
-var colors = {
+var colorsObj = {
   pink: {
     light: '#E91E63',
     dark: '#880E4F',
@@ -31,13 +31,31 @@ var colors = {
     dark: '#B71C1C',
   }
 }
+var colorOne = colors.color1;
+var colorTwo = colors.color2;
+var gradientLeft = colorsObj[colorOne].light;
+var gradientRight = colorsObj[colorTwo].light;
+var gradientLeftDark = colorsObj[colorOne].dark;
+var gradientRightDark = colorsObj[colorTwo].dark;
+
   return (
     <div>
       <div className='portmanteau'
-           style{{
-            background: `linear-gradient(to right, ${})`
+           style={{
+            background: `linear-gradient(to right, ${gradientLeft}, ${gradientRight})`
            }}
       >
+        <div
+          className='portmanteau-after'
+          style={{
+            background: `linear-gradient(to right, ${gradientLeftDark}, ${gradientRightDark})`
+          }}
+        ></div>
+        <div
+          className='portmanteau-before'
+          style={{
+            background: gradientRightDark
+          }}></div>
         <span>
           {word.portmanteau}
         </span>

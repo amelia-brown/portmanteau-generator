@@ -56,27 +56,22 @@ body {
   width: 600px;
   height: 100px;
   position: relative;
-  background: linear-gradient(to right, #F44336, #673AB7);
 }
-.portmanteau:after{
-  content: '';
+.portmanteau-after{
   height: 10px;
   width: 600px;
   transform: skewX(45deg);
   position: absolute;
   left: 5px;
   bottom: -10px;
-  background: linear-gradient(to right, #B71C1C, #311B92);
 }
-.portmanteau:before{
-  content: '';
+.portmanteau-before{
   height: 100px;
   width: 10px;
   transform: skewY(45deg);
   position: absolute;
   top: 5px;
   right: -10px;
-  background: #311B92;
 }
 .portmanteau > span {
   font-size: 1.2rem;
