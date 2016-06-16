@@ -25,7 +25,10 @@ const Words = ({words, handleToggle, showing, handleDelete}) => (
                   <Word
                     key={word.id}
                     word={word}
-                    handleDelete={handleDelete}
+                    // Passing the function like this
+                    // instead of handleDelete={handleDelete(word.id)}
+                    // prevents it from getting triggered at runtime
+                    onClick={() => handleDelete(word.id)}
                   />
                 )}
       </ul>

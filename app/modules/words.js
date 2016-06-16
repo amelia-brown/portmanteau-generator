@@ -14,6 +14,8 @@ const words = (state = [], action) => {
         }
         return true
       })
+      var newWordsArr = [...words.slice(0, index), ...words.slice(index+1)];
+      localStorage.setItem('words', newWordsArr);
       return [
           ...words.slice(0, index),
           ...words.slice(index + 1),

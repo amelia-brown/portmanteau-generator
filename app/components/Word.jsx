@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const Word = ({ word, handleDelete }) => (
+const Word = ({ word, onClick }) => (
   <li>
     <div className='portmanteau'
          style={{
@@ -11,7 +11,7 @@ const Word = ({ word, handleDelete }) => (
         {word.w1} + {word.w2} = {word.portmanteau}
       </span>
       <button
-        onClick={handleDelete(word.id)}
+        onClick={onClick}
         className='material-icons'>
         close
       </button>
@@ -21,7 +21,7 @@ const Word = ({ word, handleDelete }) => (
 
 Word.propTypes = {
   word: PropTypes.object.isRequired,
-  handleDelete: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired
 }
 
 export default Word;

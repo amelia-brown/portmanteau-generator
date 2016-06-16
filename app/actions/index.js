@@ -25,14 +25,12 @@ export function combineWords(w1, w2, color1, color2) {
 
 import uuid from 'node-uuid'
 
-export function saveWords(word, color1, color2) {
+export function saveWords(word) {
   word.id = uuid.v4();
   return {
     type: SAVE_WORDS,
     payload: {
       word,
-      color1,
-      color2
     },
   };
 };
