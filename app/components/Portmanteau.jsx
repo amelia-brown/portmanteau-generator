@@ -20,10 +20,6 @@ var wordObject = {
 }
   return (
     <div>
-      <button className='material-icons'
-              onClick={handleReset}
-      >refresh</button>
-
       <div className='portmanteau'
            style={{
             background: `linear-gradient(to right, ${gradientLeft.light}, ${gradientRight.light})`
@@ -48,9 +44,22 @@ var wordObject = {
                   handleSave(wordObject);
                   resetColors(colorOne, colorTwo);
                 }}
+                style={{
+                  color: gradientRight.dark
+                }}
         >
-          <i className='material-icons star'>grade</i>
+        Save
         </button>
+        <button className='material-icons'
+              style={{
+                color: gradientRight.dark
+              }}
+              onClick={() => {
+                handleReset();
+                resetColors(colorOne, colorTwo);
+              }}
+        >refresh</button>
+
       </div>
           </div>
   )

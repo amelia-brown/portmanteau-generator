@@ -27,10 +27,12 @@ const Word = ({ word, onClick }) => {
         <span>
           {word.w1} + {word.w2} = {word.portmanteau}
         </span>
-        <button
-          onClick={onClick}
-          className='material-icons'>
-          close
+        <button className='delete'
+                style={{
+                  color: gradientRight.dark
+                }}
+          onClick={onClick}>
+          delete
         </button>
       </div>
     </li>

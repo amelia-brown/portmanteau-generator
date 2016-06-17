@@ -32,7 +32,8 @@ const Form = ({ word, handleSubmit, getWord, colors }) => {
               Random
             </button>
         </div>
-        <button type='submit'>
+        <button type='submit'
+                className='submit'>
           <i className='material-icons md-36'>add</i>
         </button>
         <div className={`${colors.color2} wordContainer`}

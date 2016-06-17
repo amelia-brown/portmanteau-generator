@@ -14,6 +14,20 @@ const composeStoreWithMiddleware = applyMiddleware(
 
 var [color1, color2] = selectColors(colorsArray);
 
+const getHeadingColor = function() {
+  var [a, b] = selectColors(colorsArray);
+  if (color1 === a || color2 === a) {
+    return getHeadingColor();
+    if (color1 === b || color2 === b) {
+      return getHeadingColor();
+    } else {
+      return b;
+    }
+  } else {
+    return a;
+  }
+}
+
 let initialState = {
   words: JSON.parse(localStorage.getItem('words')) || [],
   colors: {
@@ -29,6 +43,8 @@ export default class Root extends Component {
     return (
       <Provider store={store}>
         <div className='main'>
+          <h1 className={`${getHeadingColor()}-heading heading`}
+          >Portmantizer</h1>
           <WordForm />
           <PortmanteauShow />
           <WordList />

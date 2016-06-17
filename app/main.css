@@ -8,7 +8,7 @@ body {
   margin: 0 auto;
 }
 .flexbox {
-  height: 60vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,13 +86,16 @@ body {
   background: rgba(255,255,255,0.2);
 }
 button {
-  border: 2px solid #1E88E5;
-  width: 48px;
-  height: 48px;
   border-radius: 50%;
   background: none;
   font-size: 0.75rem;
   color: inherit;
+  border: none;
+}
+button.submit {
+  border: 2px solid #1E88E5;
+  height: 48px;
+  width: 48px;
 }
 button > i {
   font-size: 34px;
@@ -107,14 +110,18 @@ span{
 }
 button.save {
   border: none;
-  margin-right: 40px;
-  padding-right: 40px;
+  padding: 40px;
+  font-size: 1rem
 }
 button.randomWord {
   border: none;
   width: 60px;
   padding: 5px 10px;
   margin: 0;
+}
+button.delete {
+  padding: 40px;
+  font-size: 1rem;
 }
 button > .star {
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -124,7 +131,13 @@ button > .star {
   color: rgba(255, 255, 255, 0.5);
   line-height: 45px;
 }
-
+.heading {
+  font-family: sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 3rem;
+  margin: 5rem 0 0;
+}
 
 /* COLORS */
 
@@ -135,12 +148,20 @@ button > .star {
 .red:after, .red:before {
   background: #B71C1C;
 }
+.red-heading {
+  color: #F44336;
+  text-shadow: 0px 0px #B71C1C, 1px 1px #B71C1C, 3px 3px #B71C1C, 4px 4px #B71C1C, 5px 5px #B71C1C;
+}
 .purple {
   background: #673AB7;
   color:  #311B92;
 }
 .purple:after, .purple:before {
   background: #311B92;
+}
+.purple-heading {
+  color: #673AB7;
+  text-shadow: 0px 0px #311B92, 1px 1px #311B92, 3px 3px #311B92, 4px 4px #311B92, 5px 5px #311B92;
 }
 .pink {
   background: #E91E63;
@@ -149,9 +170,17 @@ button > .star {
 .pink:after, .pink:before {
   background: #880E4F;
 }
+.pink-heading {
+  color: #E91E63;
+  text-shadow: 0px 0px #880E4F, 1px 1px #880E4F, 3px 3px #880E4F, 4px 4px #880E4F, 5px 5px #880E4F;
+}
 .yellow {
   background: #FFEB3B;
   color: #F57f17;
+}
+.yellow-heading {
+  color: #FFEB3B;
+  text-shadow: 0px 0px #F57f17, 1px 1px #F57f17, 3px 3px #F57f17, 4px 4px #F57f17, 5px 5px #F57f17;
 }
 .yellow:after, .yellow:before {
   background: #F57F17;
@@ -162,7 +191,10 @@ button > .star {
 }
 .blue:after, .blue:before{
   background: #0D47A1;
-
+}
+.blue-heading {
+  color: #2196F3;
+  text-shadow: 0px 0px #0D47A1, 1px 1px #0D47A1, 3px 3px #0D47A1, 4px 4px #0D47A1, 5px 5px #0D47A1;
 }
 .green {
   background: #BBC34A;
@@ -170,6 +202,10 @@ button > .star {
 }
 .green:after, .green:before {
   background: #33691E;
+}
+.green-heading {
+  color: #BBC34a;
+  text-shadow: 0px 0px #33691E, 1px 1px #33691E, 3px 3px #33691E, 4px 4px #33691E, 5px 5px #33691E;
 }
 
 
@@ -185,10 +221,16 @@ button > .star {
   height: 100vh;
   background: rgba(255, 255, 255, 0.5);
 }
-i.toggleModal {
+button.toggleModal {
   position: fixed;
   right: 5rem;
   top: 5rem;
+  color: #1E88E5;
+  padding: 30px;
+  font-size: 1rem;
+}
+button.toggleModal i {
+  display: block;
 }
 .wordList > ul {
   margin-top: 5rem;

@@ -3,23 +3,26 @@ import Word from './Word';
 
 const Words = ({words, handleToggle, showing, handleDelete}) => (
   <div className='modalContainer'>
-    <i className='material-icons toggleModal'
+    <button className='toggleModal'
        style={{
         display: showing ? 'none' : 'block'
        }}
        onClick={handleToggle}>
-       list
-    </i>
+       Saved words
+       <i className='material-icons'>list</i>
+    </button>
     <div
       className='wordList'
       style={{
         display: showing ? 'block' : 'none'
       }}
     >
-      <i className='material-icons toggleModal'
-         onClick={handleToggle}>
+    <button className='toggleModal'
+            onClick={handleToggle}>
+      <i className='material-icons'>
          close
       </i>
+    </button>
       <ul>
         {words.map(word =>
                   <Word
