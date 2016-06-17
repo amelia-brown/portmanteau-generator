@@ -2,8 +2,8 @@ const colors = (state = {}, action) => {
   switch (action.type) {
     case 'SET_COLORS':
       return Object.assign({}, state, {
-        color1,
-        color2
+        color1: action.payload.color1,
+        color2: action.payload.color2
       });
     default:
       return state;
@@ -11,6 +11,3 @@ const colors = (state = {}, action) => {
 }
 
 export default colors;
-
-//set colors in initial state
-// every time the 
