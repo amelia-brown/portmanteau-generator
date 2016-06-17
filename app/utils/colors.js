@@ -11,3 +11,31 @@ export const selectColors = function(arr) {
   return [color1, color2];
 };
 
+export const colorsObj = {
+  pink: {
+    light: '#E91E63',
+    dark: '#880E4F',
+  },
+  purple: {
+    light: '#673AB7',
+    dark: '#311B92',
+  },
+  blue: {
+    light: '#2196F3',
+    dark: '#0D47A1',
+  },
+  green: {
+    light: '#BBC34A',
+    dark: '#33691E',
+  },
+  yellow: {
+    light: '#FFEB3B',
+    dark: '#F57f17',
+  },
+  red: {
+    light: '#F44336',
+    dark: '#B71C1C',
+  }
+}
+
+
