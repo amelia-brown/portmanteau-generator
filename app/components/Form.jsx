@@ -60,7 +60,7 @@ const Form = ({ word, handleSubmit, getWord, colors }) => {
 Form.propTypes = {
   word: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  getWord: PropTypes.func.isRequired
+  getWord: PropTypes.func.isRequired,
 };
 
 export default Form;

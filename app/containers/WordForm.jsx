@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Form from '../components/Form';
-import { combineWords, read, setWord, setColors } from '../actions/index';
+import { combineWords, read, setWord, setColors, resetWord } from '../actions/index';
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 

@@ -25,6 +25,8 @@ const word = (state = {}, action) => {
       return {
         [action.meta]: action.payload.word,
       };
+    case 'RESET_WORD':
+      return {};
     default:
       return state;
   }

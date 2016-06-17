@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import {colorsObj} from '../utils/colors';
 import { colorsArray, selectColors } from '../utils/colors';
 
-const Portmanteau = ({word, handleSave, colors, resetColors}) => {
+const Portmanteau = ({word, handleSave, colors, resetColors, handleReset}) => {
   if (!word.portmanteau) {
     return null;
   }
@@ -20,6 +20,10 @@ var wordObject = {
 }
   return (
     <div>
+      <button className='material-icons'
+              onClick={handleReset}
+      >refresh</button>
+
       <div className='portmanteau'
            style={{
             background: `linear-gradient(to right, ${gradientLeft.light}, ${gradientRight.light})`
@@ -48,7 +52,7 @@ var wordObject = {
           <i className='material-icons star'>grade</i>
         </button>
       </div>
-    </div>
+          </div>
   )
 };
 
@@ -56,6 +60,7 @@ Portmanteau.propTypes = {
   word: PropTypes.object.isRequired,
   resetColors: PropTypes.func.isRequired,
   handleSave: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
 };
 
 export default Portmanteau;

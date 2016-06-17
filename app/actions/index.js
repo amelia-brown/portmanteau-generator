@@ -4,6 +4,7 @@ export const COMBINE_WORDS = 'COMBINE_WORDS';
 export const SAVE_WORDS = 'SAVE_WORDS';
 export const TOGGLE_SAVED_WORDS = 'TOGGLE_SAVED_WORDS';
 export const DELETE_WORD = 'DELETE_WORD';
+export const RESET_WORD = 'RESET_WORD';
 
 // Action creators
 
@@ -34,6 +35,12 @@ export function saveWords(word) {
     },
   };
 };
+
+export function resetWord() {
+  return {
+    type: RESET_WORD,
+  };
+}
 
 // Update the boolean value (whether word list showing)
 
